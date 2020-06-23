@@ -86,6 +86,11 @@
   name: Get supported kubernetes versions
   when: kubernetes_version is not defined
 
+ - openssh_keypair:
+     path: /tmp/id_ssh_rsa
+   register: res
+
+
 # create or update AKS
 - name: Create or update AKS state
   azure_rm_aks:
@@ -98,7 +103,7 @@
     service_principal: "{{ sp | default(omit) }}"
     linux_profile:
       admin_username: "{{ admin_username }}"
-      ssh_key: "{{ ssh_key }}"
+      ssh_key: "{{ res.public_key }}"
     agent_pool_profiles: "{{ [agent_pool] | default(omit) }}"
     network_profile: "{{ network_profile | default(omit) }}"
     aad_profile: "{{ aad_profile | default(omit) }}"
