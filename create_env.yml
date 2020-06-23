@@ -13,10 +13,12 @@
     - copy:
        src: $(Build.SourcesDirectory)/credentials
        dest: ~/.azure
-      
+       
+    - local_action:
+        command ansible-galaxy install toharikr.aks
         
     - include_role:
-        name: demorole
+        name: toharikr.aks
       vars:
         monitoring: yes
         name: akscluster
