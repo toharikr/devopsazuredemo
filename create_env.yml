@@ -14,10 +14,10 @@
        src: $(Build.SourcesDirectory)/credentials
        dest: ~/.azure
       
-    - script: ansible-playbook $(Build.SourcesDirectory)/test/test.yml
+    - script: ansible-playbook $(Build.SourcesDirectory)/tests/test.yml
         
     - include_role:
-        name: azure.aks
+        name: demorole
       vars:
         monitoring: yes
         name: akscluster
