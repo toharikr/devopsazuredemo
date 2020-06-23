@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+  
+      - install ansible role
+        cmd: ansible-galaxy install azure.aks
+        
+      - include_role:
+           name: azure.aks
+        vars:
+           monitoring: yes
+           name: akscluster
+           resource_group: aksroletest
