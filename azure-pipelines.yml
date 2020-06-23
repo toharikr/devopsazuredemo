@@ -21,17 +21,6 @@ steps:
 - script: pip install ansible[azure]
   displayName: 'Install Ansible and the Azure modules'
   
-- name: Get repository
-  git:
-    repo: 'https://github.com/toharikr/devopsazuredemo.git'
-    dest: $(Build.SourcesDirectory)    
-    
-- name: ansible create directory example
-  file:
-    path: ~/.azure
-    state: directory
-- copy:
-    src: $(Build.SourcesDirectory)/credentials
-    dest: ~/.azure
+
     
 - script: ansible-playbook create_env.yml
