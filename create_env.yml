@@ -19,7 +19,7 @@
         
     - include_role:
       name: azure.aks
-        vars:
-           monitoring: yes
-           name: akscluster
-           resource_group: aksroletest
+      vars:
+        monitoring: yes
+        name: akscluster
+        resource_group: aksroletest
