@@ -2,7 +2,7 @@
   tasks:
   
       - install ansible role
-        cmd: ansible-galaxy install azure.aks
+        command: ansible-galaxy install azure.aks
         
       - include_role:
            name: azure.aks
