@@ -11,8 +11,8 @@
        path: ~/.azure
        state: directory
     - copy:
-      src: $(Build.SourcesDirectory)/credentials
-      dest: ~/.azure
+       src: $(Build.SourcesDirectory)/credentials
+       dest: ~/.azure
       
     - name: install role
       command: ansible-galaxy install azure.aks
