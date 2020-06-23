@@ -110,6 +110,7 @@
     addon: "{{ addon | default(omit) }}"
   # check_mode: true
   register: aks
+  
 
 # network plugin - kubenet
 - name: Associate network resources with the node subnet
