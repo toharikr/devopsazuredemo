@@ -1,0 +1,6 @@
+    - include_role:
+        name: demorole
+      vars:
+        monitoring: yes
+        name: akscluster
+        resource_group: aksroletest
