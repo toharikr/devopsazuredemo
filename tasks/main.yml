@@ -86,9 +86,9 @@
   name: Get supported kubernetes versions
   when: kubernetes_version is not defined
 
- - openssh_keypair:
+- openssh_keypair:
      path: /tmp/id_ssh_rsa
-   register: res
+  register: res
 
 
 # create or update AKS
