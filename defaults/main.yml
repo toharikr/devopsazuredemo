@@ -1,6 +1,7 @@
 ---
 # defaults file for aks
-location_bak: eastus
+#location_bak: eastus
+location: eastus
 enable_rbac_bak: true
 
 # linux profile
