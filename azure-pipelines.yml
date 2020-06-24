@@ -17,10 +17,16 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+  
+- script: sudo apt-get install python3.6
+- script: sudo apt-get install python3-setuptools
 
-- script: pip install ansible[azure]
+- script: sudo pip3 install wheel
+  displayName: 'wheel install'
+
+- script: pip3 install ansible[azure]
   displayName: 'Install Ansible and the Azure modules'
   
-
+- script: pip3 install ansible==2.9.2
     
 - script: ansible-playbook create_env.yml
